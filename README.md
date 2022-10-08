@@ -52,3 +52,7 @@ ex) jsonPlaceHolder.ts
 1 ファイルを一つの関心ごとに対応させる
 
 ex) user.ts
+
+# バグ報告
+
+- [グラフが正しく再描画されない(対処済み)](docs/bugs/lineChart.md)
