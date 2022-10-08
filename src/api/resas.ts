@@ -43,3 +43,12 @@ export const getDemographics = async (prefCode: number) => {
     console.log(e);
   }
 };
+
+// 都道府県の人口構成をAPIから取得し、総人口の人口推移のみを返す関数
+export const getTotalPopulations = async (prefCode: number) => {
+  const demographic = await getDemographics(prefCode);
+  const populations = demographic?.result?.data.find(
+    (data) => data.label === "総人口"
+  )?.data;
+  return populations;
+};
