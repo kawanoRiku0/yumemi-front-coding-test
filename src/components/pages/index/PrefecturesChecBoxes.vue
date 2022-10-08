@@ -1,8 +1,23 @@
 <script setup lang="ts">
-import { Prefecture } from '../../../types/resasApi';
+import { Population, Prefecture } from '../../../types/resasApi';
 import PrefectureCheckBox from './PrefectureCheckBox.vue';
 
 defineProps<{ prefectures: Prefecture[] }>()
+
+const emits = defineEmits<{
+  (e: "removeDataset", pref: Prefecture): void
+  (e: "addDataset", pref: Prefecture, populations: Population[]): void
+}>()
+
+const removeDataset = (pref: Prefecture) => {
+  emits("removeDataset", pref)
+}
+
+const addDataset = (pref: Prefecture, populations: Population[]) => {
+  emits("addDataset", pref, populations)
+}
+
+
 </script>
 
 <template>
@@ -10,7 +25,8 @@ defineProps<{ prefectures: Prefecture[] }>()
     <h2>都道府県</h2>
 
     <div class="checkboxes-wapper">
-      <PrefectureCheckBox v-for="pre in prefectures" :key="pre?.prefCode" :prefecture="pre" />
+      <PrefectureCheckBox v-for="pre in prefectures" :key="pre?.prefCode" :prefecture="pre" @add-dataset="addDataset"
+        @remove-dataset="removeDataset" />
     </div>
 
   </div>
