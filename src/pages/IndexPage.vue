@@ -9,7 +9,12 @@ import PrefecturesChecBoxes from '../components/pages/index/PrefecturesChecBoxes
 const { lineData, addDataset, removeDataset } = usePopulationByYearLineData()
 const isSelected = computed(() => lineData.value.datasets.length > 0)
 
-
+// 再レンダリングなしだと、チェックボックスの状態が変わってもグラフが更新されないことがある。
+// 強制的にPopulationByYearChartを再レンダリングさせるためにkeyを動的に変化させる
+const dynaicKey = ref(0)
+watch(lineData.value, () => {
+  dynaicKey.value++
+})
 
 const { prefectures, error, loading } = useGetPrefectures()
 
@@ -25,7 +30,7 @@ const { prefectures, error, loading } = useGetPrefectures()
     <p v-else-if="loading">読み込み中...</p>
     <p v-else-if="error">エラーが発生しました</p>
 
-    <PopulationByYearChart v-if="isSelected" :line-data="lineData" />
+    <PopulationByYearChart v-if="isSelected" :key="dynaicKey" :line-data="lineData" />
     <p v-else class="prompt-text">都道府県を選択してください</p>
   </div>
 
