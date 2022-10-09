@@ -23,6 +23,32 @@
 
 # ディレクトリ構成
 
+- /src/components/domain
+
+特定の関心事に関連するコンポーネント群
+
+関心事別にフォルダを分ける
+
+あまり再利用性は意識する必要はない
+
+ex) /users/UserProfileIcon.vue
+
+- /src/components/projects
+
+再利用可能なコンポーネント群
+
+特定の関心事を扱うが、再利用可能である場合はこちら
+
+ex) /charts/PopulationByYearChart.vue
+
+- /scr/components/uiParts
+
+再利用可能なコンポーネント群
+
+UI に特化したコンポーネントのみを設置
+
+ex) MainButton.vue
+
 - /src/pages
 
 1 ファイル 1 パスに対応したページコンポーネントを置く
