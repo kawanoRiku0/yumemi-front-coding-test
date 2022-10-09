@@ -14,28 +14,28 @@ const onChange = () => {
 </script>
 
 <template>
-  <div>
+  <div class="wrapper">
     <input :id="inputId" type="checkbox" :value="state" @change="onChange" /> <label :for="inputId">{{label}}</label>
   </div>
-
 </template>
 
 <style scoped>
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
 input[type="checkbox"] {
   display: none;
-  transition: all 0.3s;
 }
 
 label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   float: left;
-  margin: 0.3rem;
-  width: 6.25rem;
-  height: 2.8rem;
-  text-align: center;
-  line-height: 2.8rem;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
+  height: 100%;
+  width: 100%;
   cursor: pointer;
   color: black;
   border: 2px solid #006DD9;
@@ -47,25 +47,5 @@ label {
 input[type="checkbox"]:checked+label {
   background: #31A9EE;
   color: #ffffff;
-}
-
-@media screen and (max-width: 960px) {
-  label {
-    margin: 0.3rem;
-    font-size: 0.8rem;
-    width: 4.7rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  label {
-    margin: 0.3rem;
-    font-size: 0.5rem;
-    width: 3.1rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
-  }
 }
 </style>

@@ -30,7 +30,31 @@ watch([isChecked], async () => {
 </script>
 
 <template>
-  <CheckBoxButton :label="prefecture.prefName" :state="isChecked" @on-state-change="setIsChecked" />
+  <div class="wrapper">
+    <CheckBoxButton :label="prefecture.prefName" :state="isChecked" @on-state-change="setIsChecked" />
+  </div>
 </template>
 
+<style scoped>
+.wrapper {
+  height: 2.8rem;
+  width: 6.25rem;
+  margin: 0.3rem;
+}
 
+@media screen and (max-width: 960px) {
+  .wrapper {
+    font-size: 0.8rem;
+    width: 4.7rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    font-size: 0.5rem;
+    width: 3.1rem;
+  }
+}
+</style>
