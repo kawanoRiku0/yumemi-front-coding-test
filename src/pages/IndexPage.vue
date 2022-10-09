@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue';
 import { usePopulationByYearLineData } from '../hooks/lineData';
 import { useGetPrefectures } from '../api/resas';
 import PopulationByYearChart from '../components/projects/charts/PopulationByYearChart.vue';
-import PrefecturesChecBoxes from '../components/domain/Prefecture/PrefecturesChecBoxes.vue';
+import PrefecturesChecBoxes from '../components/domain/Prefecture/PrefecturesCheckBoxes.vue';
 
 
 const { lineData, addDataset, removeDataset } = usePopulationByYearLineData()

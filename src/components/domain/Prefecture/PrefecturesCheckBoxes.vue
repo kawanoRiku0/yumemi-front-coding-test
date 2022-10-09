@@ -1,3 +1,5 @@
+<!-- prefecturesのcheckbox一覧 -->
+
 <script setup lang="ts">
 import { Population, Prefecture } from '../../../types/resasApi';
 import PrefectureCheckBox from './PrefectureCheckBox.vue';

@@ -1,3 +1,5 @@
+<!-- prefectureのcheckbox -->
+
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { getTotalPopulations } from '../../../api/resas';

@@ -1,3 +1,5 @@
+<!-- Buttonライクなcheckboxコンポーネント -->
+
 <script setup lang="ts">
 
 const props = defineProps<{ label: string, id?: string, state?: boolean }>()

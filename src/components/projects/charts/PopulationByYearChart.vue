@@ -1,3 +1,5 @@
+<!-- 総人口-年度グラフ -->
+
 <script setup lang="ts">
 import { Chart, ChartData, registerables } from "chart.js";
 import { LineChart } from "vue-chart-3"
