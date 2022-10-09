@@ -23,7 +23,9 @@ const { prefectures, error, loading } = useGetPrefectures()
     
 <template>
   <div class="wrapper">
-    <h1>都道府県別総人口グラフ</h1>
+    <h1>都道府県別<br class="title-br">
+      総人口グラフ</h1>
+
 
     <div>
       <PrefecturesChecBoxes v-if="prefectures" :prefectures="prefectures" @add-dataset="addDataset"
@@ -44,6 +46,10 @@ const { prefectures, error, loading } = useGetPrefectures()
 .wrapper {
   padding: 1.5rem;
   padding-top: 0;
+}
+
+.title-br {
+  display: none;
 }
 
 .chart-wrapper {
@@ -67,6 +73,10 @@ h1 {
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 2rem;
+  }
+
+  .title-br {
+    display: block;
   }
 }
 </style>
