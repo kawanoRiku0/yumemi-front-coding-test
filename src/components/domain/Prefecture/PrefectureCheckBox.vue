@@ -2,7 +2,7 @@
 import { ref, watch } from 'vue';
 import { getTotalPopulations } from '../../../api/resas';
 import { Population, Prefecture } from '../../../types/resasApi';
-import CheckBoxButton from './CheckBoxButton.vue';
+import CheckBoxButton from '../../uiParts/CheckBoxButton.vue';
 
 const props = defineProps<{ prefecture: Prefecture }>()
 const emits = defineEmits<{
