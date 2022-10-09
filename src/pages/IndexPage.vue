@@ -25,13 +25,17 @@ const { prefectures, error, loading } = useGetPrefectures()
   <div class="wrapper">
     <h1>都道府県別総人口グラフ</h1>
 
-    <PrefecturesChecBoxes v-if="prefectures" :prefectures="prefectures" @add-dataset="addDataset"
-      @remove-dataset="removeDataset" />
-    <p v-else-if="loading">読み込み中...</p>
-    <p v-else-if="error">エラーが発生しました</p>
+    <div>
+      <PrefecturesChecBoxes v-if="prefectures" :prefectures="prefectures" @add-dataset="addDataset"
+        @remove-dataset="removeDataset" />
+      <p v-else-if="loading">読み込み中...</p>
+      <p v-else-if="error">エラーが発生しました</p>
+    </div>
 
-    <PopulationByYearChart v-if="isSelected" :key="dynaicKey" :line-data="lineData" />
-    <p v-else class="prompt-text">都道府県を選択してください</p>
+    <div class="chart-wrapper">
+      <PopulationByYearChart v-if="isSelected" :key="dynaicKey" :line-data="lineData" />
+      <p v-else class="prompt-text">都道府県を選択してください</p>
+    </div>
   </div>
 
 </template>
@@ -42,8 +46,8 @@ const { prefectures, error, loading } = useGetPrefectures()
   padding-top: 0;
 }
 
-.wrapper:nth-child(n) {
-  margin-top: 2rem;
+.chart-wrapper {
+  margin-top: 4rem;
 }
 
 h1 {
