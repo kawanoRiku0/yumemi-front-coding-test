@@ -43,7 +43,7 @@
 
 # ディレクトリ構成
 
-- /src/components/domain
+- ### ### /src/components/domain
 
 特定の関心事に関連するコンポーネント群
 
@@ -53,7 +53,7 @@
 
 ex) /users/UserProfileIcon.vue
 
-- /src/components/projects
+- ### /src/components/projects
 
 再利用可能なコンポーネント群
 
@@ -61,7 +61,7 @@ ex) /users/UserProfileIcon.vue
 
 ex) /charts/PopulationByYearChart.vue
 
-- /scr/components/uiParts
+- ### /scr/components/uiParts
 
 再利用可能なコンポーネント群
 
@@ -69,19 +69,19 @@ UI に特化したコンポーネントのみを設置
 
 ex) MainButton.vue
 
-- /src/pages
+- ### /src/pages
 
 1 ファイル 1 パスに対応したページコンポーネントを置く
 
 ex) "/" → IndexPage.vue
 
-- /src/hooks
+- ### /src/hooks
 
 カスタムフックスの定義ファイル群を置く
 
 ex) user.ts
 
-- /src/api
+- ### /src/api
 
 API 通信ロジックを記述したファイル群を置く
 
@@ -91,7 +91,7 @@ API 通信ロジックを記述したファイル群を置く
 
 ex) jsonPlaceHolder.ts
 
-- /src/types
+- ### /src/types
 
 型の定義ファイル群を置く
 
